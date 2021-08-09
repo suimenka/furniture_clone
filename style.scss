@@ -347,7 +347,6 @@ ul.pagination {
   dd {
     width: 70%;
     border-bottom: 1px solid #dcdbdb;
-    padding: 5px 10px 20px;
 
     &:last-child {
       border-bottom: none;
@@ -355,6 +354,7 @@ ul.pagination {
 
     @media screen and (max-width: 900px) {
       width: 100%;
+      padding: 5px 10px 20px;
     }
   }
 

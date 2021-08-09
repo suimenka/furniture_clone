@@ -386,7 +386,6 @@ ul.pagination a {
 #company dd {
   width: 70%;
   border-bottom: 1px solid #dcdbdb;
-  padding: 5px 10px 20px;
 }
 
 #company dd:last-child {
@@ -396,6 +395,7 @@ ul.pagination a {
 @media screen and (max-width: 900px) {
   #company dd {
     width: 100%;
+    padding: 5px 10px 20px;
   }
 }
 
