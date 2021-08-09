@@ -1,0 +1,467 @@
+@charset "UTF-8";
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  color: #333;
+  font-size: 1.2rem;
+  min-height: 100vh;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:after,
+:before {
+  background-repeat: no-repeat;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1.page-title {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+#header {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+#header h1.site-title a {
+  width: 180px;
+  line-height: 1px;
+  display: block;
+}
+
+#navi {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  color: #fff;
+  padding: 36px 50px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 20;
+  opacity: 0;
+}
+
+#navi a {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+#navi li {
+  margin-bottom: 14px;
+}
+
+/*
+ハンバーガーメニュー
+メニューが開いている時は、「left: 0;」「opacity: 1;」で
+画面左に表示する
+*/
+.open #navi {
+  left: 0;
+  opacity: 1;
+}
+
+.toggle_btn {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/*
+ハンバーガーメニューの線の設定（メニューが閉じている時）
+*/
+.toggle_btn span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/*
+1本目の線の位置を設定
+*/
+.toggle_btn span:nth-child(1) {
+  top: 10px;
+}
+
+/*
+2本目の線の位置を設定
+*/
+.toggle_btn span:nth-child(2) {
+  bottom: 10px;
+}
+
+/*
+ハンバーガーメニューの線の設定（メニューが開いている時）
+線の色を白に変更
+*/
+.open .toggle_btn span {
+  background-color: #fff;
+}
+
+/*
+1本目の線を-45度回転
+*/
+.open .toggle_btn span:nth-child(1) {
+  -webkit-transform: translateY(4px) rotate(-45deg);
+  transform: translateY(4px) rotate(-45deg);
+}
+
+/*
+2本目の線を45度回転
+*/
+.open .toggle_btn span:nth-child(2) {
+  -webkit-transform: translateY(-4px) rotate(45deg);
+  transform: translateY(-4px) rotate(45deg);
+}
+
+#mask {
+  display: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/*
+メニューを開いている時は、全体を黒背景にする
+*/
+.open #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  z-index: 10;
+  cursor: pointer;
+}
+
+main #top {
+  padding-top: 80px;
+  padding-bottom: 160px;
+}
+
+main ul.product-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main ul.product-list li {
+  width: 23%;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 900px) {
+  main ul.product-list li {
+    width: 47%;
+  }
+}
+
+main img {
+  vertical-align: top;
+}
+
+main p {
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+main .viewmore,
+main .back {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.content {
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+
+ul.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul.pagination li {
+  padding: 20px;
+  margin: 0;
+}
+
+ul.pagination a {
+  font-size: 1.4rem;
+}
+
+#item {
+  max-width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 900px) {
+  #item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+#item .item-img {
+  width: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  #item .item-img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+#item .item-img img {
+  max-width: 100%;
+}
+
+#item .item-text {
+  width: 42%;
+}
+
+@media screen and (max-width: 900px) {
+  #item .item-text {
+    width: 100%;
+  }
+}
+
+#item .item-text p {
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+#item .item-text dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 1.4rem;
+}
+
+#item .item-text dl dt {
+  width: 30%;
+}
+
+#item .item-text dl dd {
+  width: 70%;
+}
+
+#about {
+  max-width: 600px;
+}
+
+#about p {
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+  line-height: 1.9;
+}
+
+#company {
+  max-width: 600px;
+}
+
+#company dl {
+  font-size: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  #company dl {
+    display: block;
+  }
+}
+
+#company dt,
+#company dd {
+  padding: 20px 10px;
+}
+
+#company dt {
+  width: 30%;
+  border-bottom: 1px solid #dcdbdb;
+}
+
+@media screen and (max-width: 900px) {
+  #company dt {
+    width: 100%;
+    border-bottom: none;
+    padding: 20px 10px 5px;
+  }
+}
+
+#company dt.last {
+  border-bottom: none;
+}
+
+#company dd {
+  width: 70%;
+  border-bottom: 1px solid #dcdbdb;
+  padding: 5px 10px 20px;
+}
+
+#company dd:last-child {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 900px) {
+  #company dd {
+    width: 100%;
+  }
+}
+
+#company .map {
+  margin-bottom: 20px;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+@media screen and (max-width: 599px) {
+  #company .map {
+    padding-bottom: 100%;
+  }
+}
+
+#company .map iframe {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 900px) {
+  #footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+#footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  #footer ul {
+    margin-bottom: 5px;
+  }
+}
+
+#footer li {
+  margin-right: 30px;
+}
+
+#footer p.copyright {
+  font-size: 1rem;
+}
+/*# sourceMappingURL=style.css.map */
