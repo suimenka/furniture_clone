@@ -191,24 +191,17 @@ main {
     padding-bottom: 160px;
   }
 
-  ul.product-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    li {
-      width: 23%;
-      margin-bottom: 40px;
-
-      @media screen and (max-width: 900px) {
-        width: 47%;
-      }
-    }
+  .product-list {
+    display: grid;
+    grid-gap: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 40px;
   }
 
   img {
     // ▼画像の下にできる隙間を消す
     vertical-align: top;
+    object-fit: cover;
   }
 
   p {
@@ -234,6 +227,7 @@ ul.pagination {
   li {
     padding: 20px;
     margin: 0;
+    font-size: 1.4rem;
   }
 
   a {
@@ -262,10 +256,6 @@ ul.pagination {
 
     img {
       max-width: 100%;
-
-      // @media screen and (max-width: 900px) {
-      //   width: 100%;
-      // }
     }
   }
 
